@@ -46,3 +46,7 @@ let p = h + ((r - 7 * m + 114)%31);
 console.log("p is " + p);
 
 console.log("the day with the egg-laying bunny is " + p + )
+
+
+let yearAsAString = "123";
+let yearAsANumber = Number(centsAsAString);
