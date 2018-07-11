@@ -16,4 +16,3 @@ if(enterHouse == "y" || enterHouse == "yes") {
   // your code here
 
 }
-console.log("Thanks for playing!");
