@@ -87,18 +87,22 @@ alarmClock(6, true) → "off"
 alarmClock(0, false) → "10:00"
 *******************************************************************************/
 
-// function alarmClock(day, vacation) {
-//   if (!vacation){
-//     if(day >= 0 !&& day <= 5)
-//     return "7:00"{
-//       else{
-//         day = 0 || day 6
-//         return "10:00"
-//       }
-//     }
-//   }
-// }
+function alarmClock(day, vacation) {
+  if (vacation === true){
+    if(0 < day && 6 > day){
+      return "10:00";
+    }else{
+      return "off";
+    }else{
+      if (0 < day && 6 > day){
+        return "7:00";
+      }else{
+        return "10:00";
+      }
+    }
 
+  }
+}
 
 /******************************************************************************
                                    caughtSpeeding
@@ -173,7 +177,7 @@ function testParrotTrouble() {
   console.log("parrotTrouble(false, 12) → false " + parrotTrouble(false, 12));
 }
 
- 
+
 }
 
 function testCaughtSpeeding() {

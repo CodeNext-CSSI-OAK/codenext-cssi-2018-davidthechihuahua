@@ -9,7 +9,8 @@ var readline = require("readline-sync");
 *******************************************************************************/
 
 function printGreeting() {
-
+console.log("hello there");
+let num = readline.question('type a number between 1-9');
 }
 
 /******************************************************************************
@@ -23,9 +24,30 @@ function printGreeting() {
   sayZeroNine(13) → ""
 *******************************************************************************/
 function sayZeroNine(num) {
-
+  if (num === 1){
+    return "one";
+  }else if (num === 2){
+    return "two";
+  }else if (num === 3){
+    return "three";
+  }else if (num === 4){
+    return "four";
+  }else if (num === 5){
+    return "five";
+  }else if (num === 6){
+    return "six";
+  }else if (num === 7){
+    return "seven";
+  }else if (num === 8){
+    return "eight";
+  }else if (num === 9){
+    return "nine";
+  } else{
+    if (num < 1 || num > 9){
+      return " ";
+    }
+  }
 }
-
 /******************************************************************************
   This function takes a number between 10 and 19 (inclusive) as input and returns
   that same number in word form. If the number is not between 10 and 19, the
@@ -37,7 +59,31 @@ function sayZeroNine(num) {
   sayTenNineteen(25) → ""
 *******************************************************************************/
 function sayTenNineteen(num) {
-
+  if (num === 10){
+    return "ten";
+  }else if (num === 11){
+    return "eleven";
+  }else if (num === 12){
+    return "twelve";
+  }else if (num === 13){
+    return "thirteen";
+  }else if (num === 14){
+    return "fourteen";
+  }else if (num === 15){
+    return "fifteen";
+  }else if (num === 16){
+    return "sixteen";
+  }else if (num === 17){
+    return "seventeen";
+  }else if (num === 18){
+    return "eighteen";
+  } else if (num === 19){
+    return "nineteen";
+  }else{
+    if (num < 1 || num > 9){
+      return " ";
+    }
+  }
 }
 
 /******************************************************************************
@@ -51,9 +97,30 @@ function sayTenNineteen(num) {
   sayTwentyNinety(1) → ""
 *******************************************************************************/
 function sayTwentyNinety(num) {
-
+  if (num === 20){
+    return "twenty";
+  }else if (num === 30){
+    return "thirty";
+  }else if (num === 40){
+    return "fourty";
+  }else if (num === 50){
+    return "fifty";
+  }else if (num === 60){
+    return "sixty";
+  }else if (num === 70){
+    return "seventy";
+  }else if (num === 80){
+    return "eighty";
+  }else if (num === 90){
+    return "ninety";
+  }else if (num === 100){
+    return "oneHundred";
+  } else{
+    if (num < 1 || num > 9){
+      return " ";
+    }
+  }
 }
-
 /******************************************************************************
   This function calls the three functions above to convert an entire number (num)
   into word form, then returns that word. This function should be able to handle
@@ -78,7 +145,20 @@ function sayTwentyNinety(num) {
   sayNumber(75) → "seventy-five"
 *******************************************************************************/
 function sayNumber(num) {
+let wordForm = "";
+let one = num % 10;
+let ten = Math.floor(num/ 10) % 10;
+let hundred = Math.floor(num / 100) % 100;
+let thousand = Math.floor(num / 1000) % 1000;
 
+let (num === 0){
+  wordForm = "zero";
+}else {
+  if (num >= 1000){
+    wordForm += sayZeroNine(thousand) + "-thousand";
+  }
+}
+return wordForm
 }
 
 /******************************************************************************
@@ -87,7 +167,10 @@ function sayNumber(num) {
   number in word form.
 *******************************************************************************/
 function run() {
-
+console.log("input: " + sayZeroNine(8));
+console.log("input: " + sayTenNineteen(16));
+console.log("input: " + sayTwentyNinety(30));
+//console.log("input: " + sayNumber());
 }
 
 // Run the program!
