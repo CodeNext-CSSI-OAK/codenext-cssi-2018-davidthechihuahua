@@ -1,4 +1,4 @@
-//Author: FirstName LastName
+//Author: david estrada
 
 /******************************************************************************
                                    sumDouble
@@ -16,6 +16,10 @@ sumDouble(2, 2) → 8
 
 
 function sumDouble(a, b) {
+   if (a === b) {
+     return (a + b) * 2;
+   }
+     return a + b;
 
 }
 
@@ -35,7 +39,11 @@ makes10(1, 9) → true
 
 
 function makes10(a, b) {
-
+if (a === 10 || b === 10 || a + b === 10) {
+  return (a,b);
+} else{
+  return a + b
+  }
 }
 
 
@@ -55,8 +63,12 @@ parrotTrouble(false, 6) → false
 *******************************************************************************/
 
 function parrotTrouble(talking, hour) {
-
-}
+  if (talking === true && (hour < 7 || hour > 20)){
+    return true;
+  } else {
+    return false;
+    }
+  }
 
 
 /******************************************************************************
@@ -75,9 +87,17 @@ alarmClock(6, true) → "off"
 alarmClock(0, false) → "10:00"
 *******************************************************************************/
 
-function alarmClock(day, vacation) {
-
-}
+// function alarmClock(day, vacation) {
+//   if (!vacation){
+//     if(day >= 0 !&& day <= 5)
+//     return "7:00"{
+//       else{
+//         day = 0 || day 6
+//         return "10:00"
+//       }
+//     }
+//   }
+// }
 
 
 /******************************************************************************
@@ -98,7 +118,17 @@ caughtSpeeding(65, true) → 0
 *******************************************************************************/
 
 function caughtSpeeding(speed, isBirthday) {
+if(isBirthday ) {
+ speed -= 5;
+}
 
+if (speed <= 60) {
+return 0;
+} else if (speed >= 61 && speed <= 80){
+return 1;
+}else{
+  return 2;
+  }
 }
 
 /****************************************************************************
@@ -143,17 +173,7 @@ function testParrotTrouble() {
   console.log("parrotTrouble(false, 12) → false " + parrotTrouble(false, 12));
 }
 
-function testAlarmClock() {
-  console.log();
-  console.log("alarmClock(1, false) → \"7:00\" " + "\"" + alarmClock(1, false) + "\"");
-  console.log("alarmClock(5, false) → \"7:00\" " + "\"" + alarmClock(5, false) + "\"");
-  console.log("alarmClock(0, false) → \"10:00\" " + "\"" + alarmClock(0, false) + "\"");
-  console.log("alarmClock(6, false) → \"10:00\" " + "\"" + alarmClock(6, false) + "\"");
-  console.log("alarmClock(0, true) → \"off\" " + "\"" + alarmClock(0, true) + "\"");
-  console.log("alarmClock(6, true) → \"off\" " + "\"" + alarmClock(6, true) + "\"");
-  console.log("alarmClock(1, true) → \"10:00\" "	+ "\"" + alarmClock(1, true) + "\"");
-  console.log("alarmClock(3, true) → \"10:00\" " + "\"" + alarmClock(3, true) +"\"");
-  console.log("alarmClock(5, true) → \"10:00\" " + "\"" + alarmClock(5, true) + "\"");
+ 
 }
 
 function testCaughtSpeeding() {
