@@ -15,7 +15,7 @@ withoutEnd("coding") → "odin"
 *******************************************************************************/
 
 function withoutEnd(str) {
-
+return str.subString(1 , str.length - 1);
 }
 
 // Test this function.
@@ -37,6 +37,7 @@ frontAgain("ed") → true
 
 
 function frontAgain(str) {
+let firstChar = str.statsWith("ed");
 
 }
 
@@ -58,7 +59,12 @@ deFront("away") → "aay"
 *******************************************************************************/
 
 function deFront(str) {
+let firstLetter = str.indexOf("str" - 2);
+if firstLetter = 'a'{
 
+}if 'b'{
+return str.indexOf("str" - 2)
+  }
 }
 
 // Test this function.
