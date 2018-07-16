@@ -10,7 +10,6 @@ var readline = require("readline-sync");
 
 function printGreeting() {
 console.log("hello there");
-let num = readline.question('type a number between 1-9');
 }
 
 /******************************************************************************
@@ -144,22 +143,34 @@ function sayTwentyNinety(num) {
   sayNumber(9999) → "nine-thousand nine-hundred ninety-nine"
   sayNumber(75) → "seventy-five"
 *******************************************************************************/
-function sayNumber(num) {
-let wordForm = "";
-let one = num % 10;
-let ten = Math.floor(num/ 10) % 10;
-let hundred = Math.floor(num / 100) % 100;
-let thousand = Math.floor(num / 1000) % 1000;
-
-let (num === 0){
-  wordForm = "zero";
-}else {
-  if (num >= 1000){
-    wordForm += sayZeroNine(thousand) + "-thousand";
+  function sayNumber(num) {
+    let wordForm = "";
+    if(num === 0){
+      wordForm = "zero";
+    }else{
+      let one = num % 10;
+      let tenths = Math.floor(num / 10) % 10;
+      let hundred = Math.floor(num / 100) % 100;
+      let thousands = Math.floor(num / 1000);
+      if (thousands > 0){
+        wordForm += sayZeroNine(thousands) + "-thousand";
+      }
+      if (hundreds > 0){
+        wordForm += sayZeroNine(hundreds) + "-hundred";
+      }
+      if( tens === 1){
+        wordForm += sayTenNineteen(tens + ones);
+      }else{
+        wordForm += sayTwentyNinety();
+      }
+      if (ones > 0 && tens !== 1)
+        if(tens >= 2){
+        wordForm += "-";
+      }
+      wordForm += sayZeroNine(ones);
+    }
+    return wordForm;
   }
-}
-return wordForm
-}
 
 /******************************************************************************
   This function simply runs your program. At the very least it should greet the
@@ -167,10 +178,10 @@ return wordForm
   number in word form.
 *******************************************************************************/
 function run() {
-console.log("input: " + sayZeroNine(8));
-console.log("input: " + sayTenNineteen(16));
-console.log("input: " + sayTwentyNinety(30));
-//console.log("input: " + sayNumber());
+printGreeting();
+let number = readline.question("enter a number between 0 and 9999");
+console.log("Word form: " + sayNumber(number));
+console.log("NOW THIS IS POD RACING!");
 }
 
 // Run the program!
