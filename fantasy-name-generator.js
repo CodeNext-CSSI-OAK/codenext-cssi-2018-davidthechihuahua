@@ -1,8 +1,8 @@
 // Author: FirstName LastName
-var readline = require("readline-sync");
+let readline = require("readline-sync");
 
 // global variables
-var firstName, lastName, momMaidenName, cityBorn, dreamCar, street, fantasyName;
+let firstName, lastName, favoriteFruit, cityBorn, favSong, nameOfPlanet, fantasyName;
 
 /******************************************************************************
                                   getNewFirstName()
@@ -13,7 +13,7 @@ var firstName, lastName, momMaidenName, cityBorn, dreamCar, street, fantasyName;
 *******************************************************************************/
 
 function getNewFirstName() {
-
+return firstName.substring(0,3) + lastName.substring(0,2).toLowerCase();
 }
 
 /******************************************************************************
@@ -25,7 +25,7 @@ function getNewFirstName() {
 *******************************************************************************/
 
 function getNewLastName() {
-
+return favoriteFruit.substring(0,2) + cityBorn.substring(0,3 ).toLowerCase();
 }
 
 /******************************************************************************
@@ -36,18 +36,23 @@ function getNewLastName() {
 *******************************************************************************/
 
 function getTitle() {
-
+let thirdToLast = lastName.charAt(lastName.length - 3);
+let secondToLast = lastName.charAt(lastName.length - 2);
+let last = lastName.charAt(lastName.length - 1);
+return last + secondToLast + thirdToLast + favSong.substring(" ").toLowerCase();
 }
+
+
 
 /******************************************************************************
                                   getHonorific()
 
   This function returns the user's full honorific. To do so, concatenate their
-  title, " of ", and the name of the street they live on.
+  title, " of ", and the name of the nameOfPlanet they live on.
 *******************************************************************************/
 
 function getHonorific() {
-
+return nameOfPlanet + " of " + getTitle();
 }
 
 /******************************************************************************
@@ -61,7 +66,15 @@ function getHonorific() {
 *******************************************************************************/
 
 function run() {
+firstName = readline.question("What is your first name boi?");
+lastName = readline.question("What is your last name?");
+favoriteFruit = readline.question("What is your favourite fruit?");
+cityBorn = readline.question("What city do you live in?");
+favSong = readline.question("What is your favorite song?");
+nameOfPlanet = readline.question("Name a planet?");
 
+//the cowbell is the most majestic intrument
+console.log(getFirstName() + " " + getNewLastName() + ", " + getTitle() + " " + getHonorific());
 }
 
 // Run the program!
