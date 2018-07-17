@@ -74,7 +74,7 @@ favSong = readline.question("What is your favorite song?");
 nameOfPlanet = readline.question("Name a planet?");
 
 //the cowbell is the most majestic intrument
-console.log(getFirstName() + " " + getNewLastName() + ", " + getTitle() + " " + getHonorific());
+console.log(getNewFirstName() + " " + getNewLastName() + ", " + getHonorific());
 }
 
 // Run the program!
