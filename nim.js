@@ -93,9 +93,9 @@ function printStones() {
 
 function removeStones() {
 let stonesToRemove = 0;
-while (!(stonesToRemove >= 1 && stonesToRemove < 3)){
+while (!(stonesToRemove >= 1 && stonesToRemove <= 3)){
   if(activePlayer === 0){
-    stonesToRemove = Number(readline.question("player one's turn. Enter a number (1, 2 or 3) to remove "));
+    stonesToRemove = Number(readline.question("player one's turn. Enter a number (1, 2 or 3) to remove stones "));
   }else{
     activePlayer === 0;
       stonesToRemove = Number(readline.question("player two's turn. Enter a number (1, 2 or 3) to remove "));
@@ -103,8 +103,8 @@ while (!(stonesToRemove >= 1 && stonesToRemove < 3)){
   if(!(stonesToRemove >= 1 && stonesToRemove < 3)){
     console.log("enter 1, 2 or 3")
   } else if(stonesToRemove > stonesRemaining){
-console.log("You can't remove more stones than there are left.")
-      stonesToRemove = 0;
+    stonesToRemove = 0;
+    console.log("You can't remove more stones than there are left.")
     }
   }
   stonesRemaining -= stonesToRemove;
@@ -130,7 +130,17 @@ console.log("You can't remove more stones than there are left.")
 *******************************************************************************/
 
 function processResult() {
+if(activePlayer === 0){
+console.log("player one wins!")
+}else{
+console.log("player two wins!")
+}
 
+
+let keepPlaying = readline.question("play again? (yes of no) ");
+if(keepPlaying !== "yes" && keepPlaying !== "y"){
+  quit = true
+  }
 }
 
 /******************************************************************************
@@ -152,9 +162,16 @@ function processResult() {
 
 function run() {
 printGreeting();
-setupGame();
+quit = false;
+while(!quit){
+  setupGame();
+  while( stonesRemaining > 0){
 printStones();
 removeStones();
+  }
+  processResult();
+}
+console.log("be gone carbon based life form!")
 }
 
 // Run the program!
